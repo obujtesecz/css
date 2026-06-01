@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obujtese.cz – Banner návrh</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0ece6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+      padding: 40px 20px;
+    }
+
+    h2.label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      text-align: center;
+    }
+
+    /* ─── VARIANTA 1 – Elegantní tmavá ─────────────────────────── */
+
+    .banner-dark {
+      width: 100%;
+      max-width: 960px;
+      height: 420px;
+      background: #1a1018;
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    }
+
+    .banner-dark .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 56px 48px;
+      z-index: 2;
+    }
+
+    .banner-dark .eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c49a6c;
+      margin-bottom: 16px;
+    }
+
+    .banner-dark h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #faf8f5;
+      margin-bottom: 12px;
+    }
+
+    .banner-dark h1 em {
+      font-style: italic;
+      color: #c49a6c;
+    }
+
+    .banner-dark .sub {
+      font-size: 14px;
+      font-weight: 300;
+      color: #b0a89e;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .banner-dark .cta-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: #c49a6c;
+      color: #1a1018;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #d4aa7a; transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: #b0a89e;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      padding: 14px 4px;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .banner-dark .right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Dekorativní kruhy v pozadí */
+    .banner-dark .circle-bg {
+      position: absolute;
+      border-radius: 50%;
+    }
+    .banner-dark .circle-bg.c1 {
+      width: 340px; height: 340px;
+      background: radial-gradient(circle, #3d2a4a 0%, transparent 70%);
+      top: -60px; right: -60px;
+      animation: pulse 4s ease-in-out infinite;
+    }
+    .banner-dark .circle-bg.c2 {
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, #c49a6c22 0%, transparent 70%);
+      bottom: 20px; right: 60px;
+      animation: pulse 4s ease-in-out infinite 1s;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+    }
+
+    /* Shoe SVG */
+    .shoe-wrap {
+      position: relative;
+      z-index: 2;
+      animation: floatUp 3s ease-in-out infinite;
+      filter: drop-shadow(0 20px 40px rgba(196,154,108,0.3));
+    }
+
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0px) rotate(-5deg); }
+      50% { transform: translateY(-12px) rotate(-5deg); }
+    }
+
+    .badge-dark {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 3;
+    }
+
+    .badge-dark span {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #7a6f68;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-dark span::before {
+      content: '';
+      width: 4px; height: 4px;
+      background: #c49a6c;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── VARIANTA 2 – Světlá / Jarní ──────────────────────────── */
+
+    .banner-light {
+      width: 100%;
+      max-width: 960px;
+      height: 420px;
+      background: linear-gradient(135deg, #fdf9f4 0%, #f5ede2 50%, #ede0d4 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.10);
+    }
+
+    .banner-light .right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Dekorativní elementy */
+    .deco-circle {
+      position: absolute;
+      border-radius: 50%;
+    }
+    .banner-light .deco-circle.d1 {
+      width: 280px; height: 280px;
+      background: #e8c9a0;
+      opacity: 0.3;
+      top: -40px; right: -40px;
+    }
+    .banner-light .deco-circle.d2 {
+      width: 160px; height: 160px;
+      background: #d4967a;
+      opacity: 0.15;
+      bottom: 30px; right: 80px;
+    }
+
+    .banner-light .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 56px 48px;
+    }
+
+    .banner-light .eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c4734a;
+      margin-bottom: 16px;
+    }
+
+    .banner-light h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #2a1f18;
+      margin-bottom: 12px;
+    }
+
+    .banner-light h1 em {
+      font-style: italic;
+      color: #c4734a;
+    }
+
+    .banner-light .sub {
+      font-size: 14px;
+      font-weight: 400;
+      color: #7a6055;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .banner-light .cta-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-terracotta {
+      background: #c4734a;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-terracotta:hover { background: #d4845a; transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: #7a6055;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 13px 22px;
+      border: 1.5px solid #c4bab4;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: #c4734a; color: #c4734a; }
+
+    .banner-light .shoe-wrap {
+      position: relative;
+      z-index: 2;
+      animation: floatLight 3s ease-in-out infinite;
+      filter: drop-shadow(0 16px 32px rgba(196,115,74,0.25));
+    }
+
+    @keyframes floatLight {
+      0%, 100% { transform: translateY(0px) rotate(-8deg); }
+      50% { transform: translateY(-10px) rotate(-8deg); }
+    }
+
+    /* Badges dole */
+    .perks {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding: 14px 32px;
+      border-top: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .perk {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #5a4035;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .perk svg { flex-shrink: 0; }
+
+    /* ─── VARIANTA 3 – Výprodej / Akce ─────────────────────────── */
+
+    .banner-sale {
+      width: 100%;
+      max-width: 960px;
+      height: 420px;
+      background: #2a1f30;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+    }
+
+    /* animated bg pattern */
+    .banner-sale::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 600px 400px at 80% 50%, #6d1a3a33 0%, transparent 60%),
+        radial-gradient(ellipse 300px 300px at 20% 30%, #c49a6c11 0%, transparent 60%);
+    }
+
+    .sale-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sale-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c49a6c;
+      margin-bottom: 12px;
+    }
+
+    .sale-percent {
+      font-family: 'Playfair Display', serif;
+      font-size: 120px;
+      font-weight: 700;
+      line-height: 0.9;
+      color: #faf8f5;
+      letter-spacing: -4px;
+      position: relative;
+    }
+
+    .sale-percent .pct {
+      font-size: 64px;
+      color: #c49a6c;
+      vertical-align: top;
+      margin-top: 12px;
+      display: inline-block;
+    }
+
+    .sale-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-style: italic;
+      color: #d4c4b8;
+      margin: 4px 0 24px;
+    }
+
+    .sale-cta-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn-sale {
+      background: linear-gradient(135deg, #c49a6c, #d4aa7a);
+      color: #1a1018;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 24px rgba(196,154,108,0.35);
+    }
+    .btn-sale:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(196,154,108,0.45); }
+
+    /* floating shoes in sale banner */
+    .sale-shoes {
+      position: absolute;
+      z-index: 1;
+    }
+    .sale-shoes.left { left: 40px; bottom: 40px; opacity: 0.15; transform: rotate(15deg); }
+    .sale-shoes.right { right: 40px; top: 40px; opacity: 0.12; transform: rotate(-20deg); }
+  </style>
+</head>
+<body>
+
+  <!-- VARIANTA 1 -->
+  <h2 class="label">Varianta 1 — Elegantní tmavá</h2>
+  <div class="banner-dark">
+    <div class="left">
+      <div class="eyebrow">Nová kolekce 2025</div>
+      <h1>Každý krok<br />je <em>příběh</em></h1>
+      <p class="sub">Prémiová obuv pro ženy, které vědí,<br />co chtějí. Doprava zdarma od 1 000 Kč.</p>
+      <div class="cta-row">
+        <button class="btn-primary">Prohlédnout kolekci</button>
+        <button class="btn-ghost">Výprodej →</button>
+      </div>
+    </div>
+    <div class="right">
+      <div class="circle-bg c1"></div>
+      <div class="circle-bg c2"></div>
+      <div class="shoe-wrap">
+        <!-- Elegantní lodička – SVG -->
+        <svg width="240" height="200" viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- podpatek -->
+          <path d="M190 155 L195 185 Q196 190 191 191 L183 192 Q178 192 178 187 L180 155 Z"
+                fill="#c49a6c" opacity="0.9"/>
+          <!-- podrážka -->
+          <path d="M40 155 Q30 156 28 162 Q26 170 35 173 L185 173 Q195 173 195 165 L190 155 Z"
+                fill="#8b6a45"/>
+          <path d="M40 155 Q30 156 28 162 Q26 170 35 173 L185 173 Q195 173 195 165 L190 155 Z"
+                fill="url(#sole-grad)"/>
+          <!-- svršek boty – hlavní tvar -->
+          <path d="M185 155 Q190 100 160 70 Q140 50 110 48 Q80 46 55 60 Q30 74 30 90
+                   Q30 110 50 125 Q70 138 100 145 Q130 150 160 152 Z"
+                fill="url(#shoe-grad)" />
+          <!-- špička – dekorativní linie -->
+          <path d="M30 90 Q28 100 32 108 Q36 116 46 120"
+                stroke="#c49a6c" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <!-- šev na nártu -->
+          <path d="M80 55 Q90 80 95 115 Q96 125 100 135"
+                stroke="#a07840" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5"/>
+          <!-- highlight -->
+          <path d="M160 70 Q170 85 178 105 Q184 120 185 140"
+                stroke="#e8c090" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+          <!-- špič boty -->
+          <path d="M30 90 Q24 95 22 105 Q21 115 30 120 Q40 124 50 122 Q38 115 36 102 Q34 94 30 90 Z"
+                fill="#7a5830" opacity="0.8"/>
+          <defs>
+            <linearGradient id="shoe-grad" x1="30" y1="48" x2="185" y2="155" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#c49a6c"/>
+              <stop offset="50%" stop-color="#a07840"/>
+              <stop offset="100%" stop-color="#7a5830"/>
+            </linearGradient>
+            <linearGradient id="sole-grad" x1="28" y1="155" x2="195" y2="173" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6a4820"/>
+              <stop offset="100%" stop-color="#8b6a45"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="badge-dark">
+        <span>Rieker</span>
+        <span>Tamaris</span>
+        <span>Caprice</span>
+        <span>Marco Tozzi</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VARIANTA 2 -->
+  <h2 class="label">Varianta 2 — Světlá / Jarní</h2>
+  <div class="banner-light">
+    <div class="left">
+      <div class="eyebrow">Jaro – Léto 2025</div>
+      <h1>Boty,<br />které <em>milujete</em></h1>
+      <p class="sub">Pohodlí a styl v jednom.<br />Doručení do 3 dnů, vrácení do 14 dnů.</p>
+      <div class="cta-row">
+        <button class="btn-terracotta">Dámské boty</button>
+        <button class="btn-outline">Pánské boty</button>
+      </div>
+    </div>
+    <div class="right">
+      <div class="deco-circle d1"></div>
+      <div class="deco-circle d2"></div>
+      <div class="shoe-wrap">
+        <!-- Sandál – světlá varianta -->
+        <svg width="220" height="200" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- podrážka platformy -->
+          <rect x="20" y="155" width="175" height="20" rx="10"
+                fill="#d4967a"/>
+          <rect x="20" y="155" width="175" height="20" rx="10"
+                fill="url(#platform-grad)"/>
+          <!-- vnitřní stélka -->
+          <ellipse cx="108" cy="152" rx="86" ry="10"
+                   fill="#e8b08a" opacity="0.7"/>
+          <!-- přední řemínek -->
+          <path d="M50 152 Q52 130 60 118 L80 105 Q85 102 90 104 L125 104 Q130 102 135 105 L155 118 Q163 130 165 152"
+                stroke="#c4734a" stroke-width="12" stroke-linecap="round" fill="none"/>
+          <path d="M50 152 Q52 130 60 118 L80 105 Q85 102 90 104 L125 104 Q130 102 135 105 L155 118 Q163 130 165 152"
+                stroke="#d4845a" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <!-- příčný řemínek -->
+          <path d="M65 130 Q108 122 150 130"
+                stroke="#c4734a" stroke-width="10" stroke-linecap="round" fill="none"/>
+          <path d="M65 130 Q108 122 150 130"
+                stroke="#e09070" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <!-- zadní fixace -->
+          <path d="M155 152 Q168 140 170 125 Q171 115 165 108"
+                stroke="#c4734a" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <path d="M50 152 Q38 140 36 125 Q35 115 40 108"
+                stroke="#c4734a" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <!-- přezky -->
+          <circle cx="168" cy="115" r="6" fill="#2a1f18" opacity="0.8"/>
+          <circle cx="38" cy="115" r="6" fill="#2a1f18" opacity="0.8"/>
+          <defs>
+            <linearGradient id="platform-grad" x1="20" y1="155" x2="195" y2="175" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#c4734a"/>
+              <stop offset="100%" stop-color="#e09070"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="perks">
+        <div class="perk">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c4734a" stroke-width="2.5" stroke-linecap="round">
+            <path d="M5 12l5 5L20 7"/>
+          </svg>
+          Doprava zdarma od 1 000 Kč
+        </div>
+        <div class="perk">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c4734a" stroke-width="2.5" stroke-linecap="round">
+            <path d="M5 12l5 5L20 7"/>
+          </svg>
+          Doručení do 3 dnů
+        </div>
+        <div class="perk">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c4734a" stroke-width="2.5" stroke-linecap="round">
+            <path d="M5 12l5 5L20 7"/>
+          </svg>
+          14 dní na vrácení
+        </div>
+        <div class="perk">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c4734a" stroke-width="2.5" stroke-linecap="round">
+            <path d="M5 12l5 5L20 7"/>
+          </svg>
+          Od roku 1993
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VARIANTA 3 -->
+  <h2 class="label">Varianta 3 — Výprodej / Akce</h2>
+  <div class="banner-sale">
+    <!-- dekorativní boty v pozadí -->
+    <div class="sale-shoes left">
+      <svg width="160" height="140" viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M190 155 L195 185 Q196 190 191 191 L183 192 Q178 192 178 187 L180 155 Z" fill="#c49a6c"/>
+        <path d="M40 155 Q30 156 28 162 Q26 170 35 173 L185 173 Q195 173 195 165 L190 155 Z" fill="#8b6a45"/>
+        <path d="M185 155 Q190 100 160 70 Q140 50 110 48 Q80 46 55 60 Q30 74 30 90 Q30 110 50 125 Q70 138 100 145 Q130 150 160 152 Z" fill="#c49a6c"/>
+      </svg>
+    </div>
+    <div class="sale-shoes right">
+      <svg width="160" height="140" viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M190 155 L195 185 Q196 190 191 191 L183 192 Q178 192 178 187 L180 155 Z" fill="#c49a6c"/>
+        <path d="M40 155 Q30 156 28 162 Q26 170 35 173 L185 173 Q195 173 195 165 L190 155 Z" fill="#8b6a45"/>
+        <path d="M185 155 Q190 100 160 70 Q140 50 110 48 Q80 46 55 60 Q30 74 30 90 Q30 110 50 125 Q70 138 100 145 Q130 150 160 152 Z" fill="#c49a6c"/>
+      </svg>
+    </div>
+
+    <div class="sale-content">
+      <div class="sale-eyebrow">Sezónní výprodej</div>
+      <div class="sale-percent">
+        až 50<span class="pct">%</span>
+      </div>
+      <div class="sale-title">slevy na vybrané modely</div>
+      <div class="sale-cta-row">
+        <button class="btn-sale">Jít na výprodej</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 40px;"></div>
+</body>
+</html>
