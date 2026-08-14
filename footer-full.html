@@ -136,6 +136,15 @@
       color: var(--ob-ink) !important;
       margin: 0;
     }
+
+    /* --- mini pruh před hodnocením obchodu: jen 2 položky, zbytek už je nahoře --- */
+    #ob-footer .ob-usp-bar--mini {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--ob-line);
+      border-bottom: 1px solid var(--ob-line);
+      margin: 0 0 8px 0;
+    }
   </style>
 
   <div class="ob-usp-bar">
@@ -201,5 +210,27 @@
       skladem! Doprava od 1000 Kč zdarma s doručením na adresu. Veškeré zboží expedujeme do 24h
       v pracovní dny.
     </p>
+  </div>
+
+  <div class="ob-usp-bar--mini">
+    <div class="ob-usp-item">
+      <span class="ob-usp-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M7 11v8H4.5a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1H7z"/><path d="M7 11l3.2-6.6c1.1 0 2.3.9 2.3 2.2V9h4.7a2 2 0 0 1 2 2.3l-.9 5.7A2 2 0 0 1 17.3 19H7"/></svg>
+      </span>
+      <div>
+        <p class="ob-usp-title">30+ let na trhu</p>
+        <p class="ob-usp-desc">Prodáváme obuv od roku 1993</p>
+      </div>
+    </div>
+
+    <div class="ob-usp-item">
+      <span class="ob-usp-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="6.3"/><path d="m12 6.6 1.1 2.3 2.5.35-1.8 1.75.42 2.5L12 12.3l-2.22 1.2.42-2.5-1.8-1.75 2.5-.35z"/><path d="M8.7 14.7 7 21l5-2.6 5 2.6-1.7-6.3"/></svg>
+      </span>
+      <div>
+        <p class="ob-usp-title">98 % nás doporučuje</p>
+        <p class="ob-usp-desc">Podle hodnocení zákazníků</p>
+      </div>
+    </div>
   </div>
 </div>
