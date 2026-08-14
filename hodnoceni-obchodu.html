@@ -1,0 +1,183 @@
+<!--
+  Obujtese.cz – restyling nativního widgetu "Hodnocení obchodu" (#hodnoceniobchodu)
+  Tohle HTML negenerujeme my – vykresluje ho Shoptet sám, takže tady jen
+  přepisujeme jeho vzhled přes CSS. Vložte tento <style> blok buď:
+    a) do Shoptet do "Vlastní CSS" (Nastavení e-shopu → Design → CSS/JS) –
+       v tom případě vyndejte vnější tagy <style> a </style>, pole
+       očekává čisté CSS,
+    b) nebo do libovolného HTML pole na stránce, kde se widget zobrazuje –
+       pak nechte <style> tak, jak je.
+
+  Vše je scoped na #hodnoceniobchodu, takže to NEOVLIVNÍ zbytek e-shopu.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+  #hodnoceniobchodu {
+    --ho-ink: #1a1a1a;
+    --ho-muted: #6f6f6f;
+    --ho-line: #e3e3e3;
+    --ho-plus: #3f7d4a;
+    --ho-minus: #a23b3b;
+
+    box-sizing: border-box;
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    color: var(--ho-ink) !important;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  #hodnoceniobchodu *,
+  #hodnoceniobchodu *::before,
+  #hodnoceniobchodu *::after {
+    box-sizing: inherit;
+  }
+
+  /* --- nadpis --- */
+  #hodnoceniobchodu > h2 {
+    text-align: center;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    margin: 0 0 20px 0;
+  }
+  #hodnoceniobchodu > h2 a {
+    color: var(--ho-ink) !important;
+    text-decoration: none !important;
+  }
+  #hodnoceniobchodu > h2 a:hover {
+    text-decoration: underline !important;
+  }
+
+  /* --- souhrnné hodnocení nahoře --- */
+  #hodnoceniobchodu .shop-eval-stars {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 30px 0;
+  }
+  #hodnoceniobchodu .rate-average-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 26px;
+    border: 1px solid var(--ho-line);
+    border-radius: 999px;
+  }
+  #hodnoceniobchodu .rate-average {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ho-ink) !important;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  #hodnoceniobchodu .rate-star-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+  #hodnoceniobchodu .stars-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--ho-muted) !important;
+  }
+
+  /* --- mřížka recenzí, s plynulým zeslabením dole --- */
+  #hodnoceniobchodu .shop-eval {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-height: 640px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    margin: 0 0 24px 0;
+  }
+  @media (max-width: 900px) {
+    #hodnoceniobchodu .shop-eval { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    #hodnoceniobchodu .shop-eval { grid-template-columns: 1fr; max-height: 520px; }
+  }
+
+  #hodnoceniobchodu .vote-wrap {
+    border: 1px solid var(--ho-line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #hodnoceniobchodu .vote-header {
+    display: flex;
+  }
+  #hodnoceniobchodu .vote-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+  }
+  #hodnoceniobchodu .vote-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ho-ink) !important;
+  }
+  #hodnoceniobchodu .vote-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--ho-muted) !important;
+  }
+  #hodnoceniobchodu .vote-delimeter {
+    color: var(--ho-line) !important;
+  }
+  #hodnoceniobchodu .vote-time {
+    color: var(--ho-muted) !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #hodnoceniobchodu .vote-content {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ho-ink) !important;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  #hodnoceniobchodu .heureka-rating-group.plus {
+    color: var(--ho-plus) !important;
+  }
+  #hodnoceniobchodu .heureka-rating-group.minus {
+    color: var(--ho-minus) !important;
+  }
+
+  /* --- tlačítko "Zobrazit více" --- */
+  #hodnoceniobchodu .shop-stat-all {
+    text-align: center;
+    margin-top: 4px;
+  }
+  #hodnoceniobchodu .btn.btn-conversion {
+    display: inline-block;
+    border: 1px solid var(--ho-ink);
+    color: var(--ho-ink) !important;
+    background: transparent !important;
+    padding: 11px 26px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  #hodnoceniobchodu .btn.btn-conversion:hover {
+    background: var(--ho-ink) !important;
+    color: #ffffff !important;
+  }
+</style>
