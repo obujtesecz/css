@@ -1,0 +1,185 @@
+<!--
+  Obujtese.cz – „důvěryhodnostní" pás do patičky
+  Vložte celý tento blok (včetně <style>) do Shoptet do HTML/textového pole patičky
+  (Vzhled webu → Upravit vzhled → patička → blok „Vlastní HTML", nebo přímo
+  do stávajícího textového pole patičky, kam jde i aktuální úvodní text).
+
+  Vše je schované pod #ob-usp-footer, takže styly NEOVLIVNÍ zbytek e-shopu
+  (žádný globální reset, žádné selektory na "a", "p", "h2" apod. mimo tento blok).
+-->
+<div id="ob-usp-footer">
+  <style>
+    #ob-usp-footer {
+      --ob-bg: #faf6f1;
+      --ob-border: #e7dccb;
+      --ob-accent: #8a5a34;
+      --ob-text: #2b2420;
+      --ob-muted: #6b5f52;
+      --ob-star: #d9a441;
+
+      box-sizing: border-box;
+      max-width: 1200px;
+      margin: 32px auto;
+      padding: 28px 20px;
+      background: var(--ob-bg);
+      border: 1px solid var(--ob-border);
+      border-radius: 14px;
+      font-family: inherit;
+      color: var(--ob-text);
+    }
+    #ob-usp-footer *,
+    #ob-usp-footer *::before,
+    #ob-usp-footer *::after {
+      box-sizing: inherit;
+    }
+
+    #ob-usp-footer .ob-usp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin: 0 0 24px 0;
+    }
+    @media (max-width: 900px) {
+      #ob-usp-footer .ob-usp-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      #ob-usp-footer .ob-usp-grid { grid-template-columns: 1fr; }
+    }
+
+    #ob-usp-footer .ob-usp-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+      padding: 16px 10px;
+      background: #ffffff;
+      border: 1px solid var(--ob-border);
+      border-radius: 10px;
+    }
+    #ob-usp-footer .ob-usp-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ob-accent);
+    }
+    #ob-usp-footer .ob-usp-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+    }
+    #ob-usp-footer .ob-usp-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 0;
+    }
+    #ob-usp-footer .ob-usp-desc {
+      font-size: 13px;
+      color: var(--ob-muted);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    #ob-usp-footer .ob-reviews {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      background: #ffffff;
+      border: 1px solid var(--ob-border);
+      border-radius: 10px;
+    }
+    #ob-usp-footer .ob-reviews-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    #ob-usp-footer .ob-reviews-stars {
+      display: flex;
+      gap: 2px;
+      color: var(--ob-star);
+    }
+    #ob-usp-footer .ob-reviews-stars svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+    #ob-usp-footer .ob-reviews-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0 0 2px 0;
+    }
+    #ob-usp-footer .ob-reviews-sub {
+      font-size: 13px;
+      color: var(--ob-muted);
+      margin: 0;
+    }
+
+    /* místo pro widget hodnocení obchodu (Heureka / Zboží.cz apod.) */
+    #ob-usp-footer #hodnoceniobchodu {
+      border: none;
+      display: flex;
+      align-items: center;
+      min-height: 40px;
+    }
+  </style>
+
+  <div class="ob-usp-grid">
+    <div class="ob-usp-item">
+      <span class="ob-usp-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      </span>
+      <p class="ob-usp-title">30+ let na trhu</p>
+      <p class="ob-usp-desc">Prodáváme obuv a doplňky od roku 1993</p>
+    </div>
+
+    <div class="ob-usp-item">
+      <span class="ob-usp-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+      </span>
+      <p class="ob-usp-title">9 kamenných prodejen</p>
+      <p class="ob-usp-desc">Zboží si můžete vyzkoušet i osobně</p>
+    </div>
+
+    <div class="ob-usp-item">
+      <span class="ob-usp-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
+      </span>
+      <p class="ob-usp-title">Doprava zdarma</p>
+      <p class="ob-usp-desc">Při objednávce nad 1000 Kč</p>
+    </div>
+
+    <div class="ob-usp-item">
+      <span class="ob-usp-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 7v5l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+      </span>
+      <p class="ob-usp-title">Expedice do 24h</p>
+      <p class="ob-usp-desc">Skladem, odesíláme v pracovní dny</p>
+    </div>
+  </div>
+
+  <div class="ob-reviews">
+    <div class="ob-reviews-text">
+      <span class="ob-reviews-stars" aria-hidden="true">
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.5,18 10,14.5 4.5,18 6,11.8 1,7.5 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.5,18 10,14.5 4.5,18 6,11.8 1,7.5 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.5,18 10,14.5 4.5,18 6,11.8 1,7.5 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.5,18 10,14.5 4.5,18 6,11.8 1,7.5 7.4,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.5,18 10,14.5 4.5,18 6,11.8 1,7.5 7.4,7"/></svg>
+      </span>
+      <div>
+        <p class="ob-reviews-title">Spokojení zákazníci</p>
+        <p class="ob-reviews-sub">Podívejte se, co o nás říkají</p>
+      </div>
+    </div>
+    <!-- sem se natáhne stávající widget hodnocení (Heureka / Zboží.cz) -->
+    <div id="hodnoceniobchodu"></div>
+  </div>
+</div>
