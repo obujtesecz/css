@@ -36,32 +36,21 @@
 
     #ob-footer .ob-usp-item {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      padding: 22px 18px;
-      border-left: 1px solid var(--ob-line);
-    }
-    #ob-footer .ob-usp-item:first-child {
-      border-left: none;
-    }
-    @media (max-width: 700px) {
-      #ob-footer .ob-usp-item {
-        border-left: none;
-        border-top: 1px solid var(--ob-line);
-      }
-      #ob-footer .ob-usp-item:nth-child(odd) {
-        border-right: 1px solid var(--ob-line);
-      }
-      #ob-footer .ob-usp-item:nth-child(-n+2) {
-        border-top: none;
-      }
+      text-align: center;
+      gap: 8px;
+      width: 168px;
+      padding: 20px 14px;
+      border: 1px solid var(--ob-line);
+      border-radius: 10px;
     }
 
     #ob-footer .ob-usp-icon {
       flex: none;
-      width: 30px;
-      height: 30px;
+      width: 22px;
+      height: 22px;
       color: var(--ob-ink);
     }
     #ob-footer .ob-usp-icon svg {
@@ -127,13 +116,13 @@
       margin: 0;
     }
 
-    /* --- mini pruh před hodnocením obchodu: jen 2 položky, zbytek už je nahoře --- */
+    /* --- dvě dlaždice před hodnocením obchodu: zbytek USP je už nahoře --- */
     #ob-footer .ob-usp-bar--mini {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 1px solid var(--ob-line);
-      border-bottom: 1px solid var(--ob-line);
-      margin: 0 0 8px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 8px 0 24px;
     }
   </style>
 
