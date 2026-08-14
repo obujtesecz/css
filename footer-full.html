@@ -34,20 +34,10 @@
       box-sizing: inherit;
     }
 
-    /* --- USP pruh --- */
-    #ob-footer .ob-usp-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--ob-line);
-      border-bottom: 1px solid var(--ob-line);
-    }
-    @media (max-width: 700px) {
-      #ob-footer .ob-usp-bar { grid-template-columns: repeat(2, 1fr); }
-    }
-
     #ob-footer .ob-usp-item {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 12px;
       padding: 22px 18px;
       border-left: 1px solid var(--ob-line);
@@ -146,48 +136,6 @@
       margin: 0 0 8px 0;
     }
   </style>
-
-  <div class="ob-usp-bar">
-    <div class="ob-usp-item">
-      <span class="ob-usp-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M7 11v8H4.5a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1H7z"/><path d="M7 11l3.2-6.6c1.1 0 2.3.9 2.3 2.2V9h4.7a2 2 0 0 1 2 2.3l-.9 5.7A2 2 0 0 1 17.3 19H7"/></svg>
-      </span>
-      <div>
-        <p class="ob-usp-title">30+ let na trhu</p>
-        <p class="ob-usp-desc">Prodáváme obuv od roku 1993</p>
-      </div>
-    </div>
-
-    <div class="ob-usp-item">
-      <span class="ob-usp-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="6.3"/><path d="m12 6.6 1.1 2.3 2.5.35-1.8 1.75.42 2.5L12 12.3l-2.22 1.2.42-2.5-1.8-1.75 2.5-.35z"/><path d="M8.7 14.7 7 21l5-2.6 5 2.6-1.7-6.3"/></svg>
-      </span>
-      <div>
-        <p class="ob-usp-title">98 % nás doporučuje</p>
-        <p class="ob-usp-desc">Podle hodnocení zákazníků</p>
-      </div>
-    </div>
-
-    <div class="ob-usp-item">
-      <span class="ob-usp-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M12 3 3 7.5 12 12l9-4.5z"/><path d="M3 7.5V16l9 4.5 9-4.5V7.5"/><path d="M12 12v8.5"/></svg>
-      </span>
-      <div>
-        <p class="ob-usp-title">Doprava zdarma</p>
-        <p class="ob-usp-desc">Při nákupu nad 1000 Kč</p>
-      </div>
-    </div>
-
-    <div class="ob-usp-item">
-      <span class="ob-usp-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M21 3 10.5 13.5"/><path d="M21 3 14 21l-3.5-7.5L3 10z"/></svg>
-      </span>
-      <div>
-        <p class="ob-usp-title">Expedice do 24h</p>
-        <p class="ob-usp-desc">Skladem, v pracovní dny</p>
-      </div>
-    </div>
-  </div>
 
   <div class="ob-about">
     <h1 class="ob-about-title">Obujtese.cz – Srdeční záležitost</h1>
