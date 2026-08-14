@@ -10,6 +10,10 @@
   Vizuální styl (černobílé liniové ikony, verzálky, tenké dělicí linky)
   navazuje na stávající ikony USP na webu (výměna a vrácení / doprava zdarma /
   rychlé odeslání / bezpečný nákup).
+
+  Ikona u "98 % nás doporučuje" je vlastní liniová plaketa/pečeť (ne oficiální
+  logo Heureky – to je barevná ochranná známka, která by se do černobílé sady
+  nehodila a nejde ji takhle jen tak převzít).
 -->
 <div id="ob-usp-footer">
   <style>
@@ -21,6 +25,7 @@
       box-sizing: border-box;
       max-width: 1200px;
       margin: 32px auto;
+      background: #ffffff;
       font-family: inherit;
       color: var(--ob-ink);
     }
@@ -97,44 +102,6 @@
       line-height: 1.3;
     }
 
-    #ob-usp-footer .ob-reviews {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 20px 4px;
-    }
-    #ob-usp-footer .ob-reviews-text {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    #ob-usp-footer .ob-reviews-icon {
-      flex: none;
-      width: 28px;
-      height: 28px;
-      color: var(--ob-ink);
-    }
-    #ob-usp-footer .ob-reviews-icon svg {
-      width: 100%;
-      height: 100%;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    /* místo pro oficiální Heureka widget "Ověřeno zákazníky" (natáhne se sám ze
-       stávajícího embed skriptu Heureky, tady mu jen dáme hezké zarovnání) */
-    #ob-usp-footer #hodnoceniobchodu {
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      min-height: 30px;
-    }
   </style>
 
   <div class="ob-usp-bar">
@@ -150,7 +117,7 @@
 
     <div class="ob-usp-item">
       <span class="ob-usp-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M7 11v8H4.5a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1H7z"/><path d="M7 11l3.2-6.6c1.1 0 2.3.9 2.3 2.2V9h4.7a2 2 0 0 1 2 2.3l-.9 5.7A2 2 0 0 1 17.3 19H7"/></svg>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="6.3"/><path d="m12 6.6 1.1 2.3 2.5.35-1.8 1.75.42 2.5L12 12.3l-2.22 1.2.42-2.5-1.8-1.75 2.5-.35z"/><path d="M8.7 14.7 7 21l5-2.6 5 2.6-1.7-6.3"/></svg>
       </span>
       <div>
         <p class="ob-usp-title">98 % nás doporučuje</p>
@@ -177,19 +144,5 @@
         <p class="ob-usp-desc">Skladem, v pracovní dny</p>
       </div>
     </div>
-  </div>
-
-  <div class="ob-reviews">
-    <div class="ob-reviews-text">
-      <span class="ob-reviews-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><polygon points="12,3 14.9,9.1 21.5,9.9 16.8,14.4 18,21 12,17.7 6,21 7.2,14.4 2.5,9.9 9.1,9.1"/></svg>
-      </span>
-      <div>
-        <p class="ob-usp-title">Hodnocení zákazníků</p>
-        <p class="ob-usp-desc">Podívejte se, co o nás říkají</p>
-      </div>
-    </div>
-    <!-- sem se natáhne stávající widget hodnocení (Heureka / Zboží.cz) -->
-    <div id="hodnoceniobchodu"></div>
   </div>
 </div>
