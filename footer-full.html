@@ -8,6 +8,9 @@
 -->
 <div id="ob-footer">
   <style>
+    /* Načte se jen font pro tento blok, nic jiného na stránce to nemění */
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
     #ob-footer {
       --ob-ink: #1a1a1a;
       --ob-muted: #6f6f6f;
@@ -17,7 +20,7 @@
       max-width: 1200px;
       margin: 32px auto;
       background: #ffffff;
-      font-family: inherit;
+      font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: var(--ob-ink);
     }
     #ob-footer *,
