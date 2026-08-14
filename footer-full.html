@@ -1,10 +1,16 @@
 <!--
-  Obujtese.cz – kompletní blok patičky (USP pruh + текст "Srdeční záležitost")
+  Obujtese.cz – kompletní blok "Úvodní text" na homepage (USP pruh + text "Srdeční záležitost")
   Vložte celý tento blok (včetně <style>) do Shoptet do textového/HTML pole
-  patičky – nahrazuje stávající text, ať jde vizuálně dohromady jako jeden celek.
+  úvodního textu na homepage – nahrazuje stávající text, ať jde vizuálně
+  dohromady jako jeden celek.
 
   Vše je schované pod #ob-footer, takže styly NEOVLIVNÍ zbytek e-shopu
   (žádný globální reset, žádné selektory na "a", "p", "h2" apod. mimo tento blok).
+
+  SEO: nadpis je <h1>, protože tenhle blok je JEN na homepage (potvrzeno).
+  DŮLEŽITÉ: než to nasadíte, ověřte, že homepage šablona jinde negeneruje
+  vlastní <h1> (např. v bannerru/slideru) – na jedné stránce má být <h1> jen
+  jeden. Pokud tam nějaký už je, přepněte tenhle tag zpátky na <h2>.
 -->
 <div id="ob-footer">
   <style>
@@ -174,7 +180,7 @@
   </div>
 
   <div class="ob-about">
-    <p class="ob-about-title">Obujtese.cz – Srdeční záležitost</p>
+    <h1 class="ob-about-title">Obujtese.cz – Srdeční záležitost</h1>
     <p class="ob-about-text">
       Naše společnost je provozovatelem obchodů s obuví a módními doplňky, působící na českém trhu
       již od roku 1993. V současné době provozujeme síť 9 prodejen. Jsme oficiálním prodejcem
